@@ -1,0 +1,41 @@
+{
+  "lists": [
+    {
+      "id": 0,
+      "title": "Things To Do",
+      "cards": [
+        {
+          "id": 0,
+          "title": "configure SASS",
+          "description": "use node-sass with webpack"
+        },
+        {
+          "id": 1,
+          "title": "configure SASS",
+          "description": "use node-sass with webpack"
+        },
+        {
+          "id": 2,
+          "title": "configure SASS",
+          "description": "use node-sass with webpack"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "title": "In Progress",
+      "cards": [
+        {
+          "id": 0,
+          "title": "configure SASS",
+          "description": "use node-sass with webpack"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Done",
+      "cards": []
+    }
+  ]
+}

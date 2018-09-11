@@ -1,0 +1,40 @@
+.card {
+  background-color: white;
+  padding: 1px 15px;
+  border-radius: 4px;
+  line-height: 1;
+  margin: 10px 0px;
+  box-shadow: 0 1px 0 #ccc;
+  border-top: 3px solid #8f6c94;
+  display: flex;
+  justify-content: space-between;
+
+  &:hover {
+    background: linear-gradient(to bottom,#f4e8f79e, #fcfafd);
+  }
+
+  &__btn{
+    border: none;
+    color: white;
+    padding: 3px;
+    cursor: pointer;
+    height: 20px;
+    margin-top: 10px;
+  }
+
+  &__title {
+    font-size: 14px;
+    color: #8c8c8c;
+    
+    &::after{
+      content: "edit";
+      float: right;
+      display: none;
+    }
+  }
+
+  &__description {
+    font-size: smaller;
+    color: #a076a6;
+  }
+}

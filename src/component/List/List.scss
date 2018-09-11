@@ -1,0 +1,32 @@
+.list {
+  width: 250px;
+  margin: 0 10px;
+  background: #f7f7f7;
+  border-radius: 3px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+  cursor: pointer;
+
+  &__header {
+    // display: block;
+    padding: 10px;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-size: 1em;
+    font-weight: bold;
+    letter-spacing: .5px;
+    background-color: #8f6c94;
+    color: white;
+    padding: 2%;
+    display: inline;
+  }
+
+  &__content {
+    overflow-x: hidden;
+    padding: 0 10px;
+  }
+}

@@ -1,0 +1,4 @@
+export const FETCH_ALL_LISTS = 'FETCH_ALL_LISTS';
+export const ADD_NEW_LIST = 'ADD_NEW_LIST';
+export const ADD_NEW_CARD_TO_LIST = 'ADD_NEW_CARD_TO_LIST';
+export const DELETE_CARD_FROM_LIST = 'DELETE_CARD_FROM_LIST';

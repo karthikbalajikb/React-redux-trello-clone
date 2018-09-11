@@ -1,0 +1,60 @@
+.addbutton {
+  border-radius: 0 0 3px 3px;
+  color: #8c8c8c;
+  display: block;
+  flex: 0 0 auto;
+  padding: 10px 20px;
+  font-size: small;
+  height: 18px;
+  cursor: pointer;
+  text-align: center;
+  background-color: #f7f7f7;
+
+  &:hover {
+    background-color: #e2e2e2;
+  }
+}
+
+.addtext {
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f7f7;
+
+  &__input {
+    border: none;
+    height: 30px;
+    padding: 1% 6%;
+    color: #afaeae;
+    margin: 0 0 4px 0;
+    border-radius: 4px;
+  }
+
+  &__btn{
+    background-color: #5aac44;
+    box-shadow: 0 1px 0 0 #3f6f21;
+    border: none;
+    color: #fff;
+    margin: 3px;
+    padding: 5px;
+    border-radius: 5px;
+
+    &:hover{
+      background-color: #519839;
+    }
+  }
+
+  &__cancelbtn{
+    background-color: #c1c1c1;
+    box-shadow: 0 1px 0 0 #949393;
+    border: none;
+    color: #fff;
+    margin: 3px;
+    padding: 5px;
+    border-radius: 5px;
+
+    &:hover{
+      background-color: #949393;
+    }
+  }
+}
