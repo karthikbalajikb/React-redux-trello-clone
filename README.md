@@ -1,5 +1,7 @@
 ## REACT REDUX TRELLO CLONE
 
+![image](https://user-images.githubusercontent.com/8594076/45387391-938ed980-b633-11e8-8561-462302fe1505.png)
+
 ### Develop
 
 `npm install` will install the node dependencies.
