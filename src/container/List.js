@@ -15,11 +15,11 @@ class ListContainer extends Component {
     return (
       <div className={Styles.list__container}>
         {this.props.lists.List.List.map((d, i) => (
-          <List id={d.id} title={d.title} cards={d.cards} key={d.title + i} handleAddNewCard={(id) => this.props.handleAddNewCard(id)} handleDeleteCard={(listId, cardId) => this.props.handleDeleteCard(listId, cardId)}/>
+          <List id={d.id} title={d.title} cards={d.cards} key={d.title + i} handleAddNewCard={(id,name) => this.props.handleAddNewCard(id,name)} handleDeleteCard={(listId, cardId) => this.props.handleDeleteCard(listId, cardId)}/>
         ))}
         <AddButton
           name="Add another List"
-          handleAddNewItem={() => this.props.handleAddNewItem()}
+          handleAddNewItem={(name) => this.props.handleAddNewItem(name)}
         />
       </div>
     );
@@ -48,8 +48,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  handleAddNewItem: () => dispatch(addNewList('title')),
-  handleAddNewCard: (id) =>  { console.log('22'); dispatch(addNewCard(id, 'demo card title', 'demo card description')) },
+  handleAddNewItem: (name) => dispatch(addNewList(name)),
+  handleAddNewCard: (id,name) =>  { console.log('22'); dispatch(addNewCard(id, name, 'demo card description')) },
   handleDeleteCard: (lid, cid) => dispatch(deleteCard(lid,cid))
 });
 

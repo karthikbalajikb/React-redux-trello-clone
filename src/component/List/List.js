@@ -20,7 +20,7 @@ const List = props => (
           <Card id={d.id} title={d.title} description={d.description} key={d.title+i} handleDeleteCard={() => props.handleDeleteCard(props.id,d.id)} />
         ))}
       </div>
-      <AddButton name="Add another card" handleAddNewItem={() => props.handleAddNewCard(props.id)} />
+      <AddButton name="Add another card" handleAddNewItem={(name) => props.handleAddNewCard(props.id,name)} />
     </section>
   </article>
 );
