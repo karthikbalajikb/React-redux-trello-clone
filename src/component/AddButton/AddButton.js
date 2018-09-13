@@ -9,17 +9,20 @@ class AddButton extends Component {
     this.state = {
       openMode: false
     };
+    this.addtext_box = React.createRef();
   }
 
-  toggleTextBox = (flag) => {
-    this.setState({openMode :  flag})
-  }
+  toggleTextBox = flag => {
+    this.setState({ openMode: flag });
+  };
 
   handleAddNewItem = () => {
-    console.log("handleAddNewItem")
-    let text = this.props.name.indexOf('List') > -1 ? document.getElementById('tc_add_text_box').value : document.getElementById('tc_add_text_area').value; 
+    let text =
+      this.props.name.indexOf("List") > -1
+        ? document.getElementById("tc_add_text_box").value
+        : this.addtext_box.current.value;
     this.props.handleAddNewItem(text);
-  }
+  };
 
   render() {
     const { name } = this.props;
@@ -27,12 +30,37 @@ class AddButton extends Component {
       <div>
         {this.state.openMode ? (
           <div className={Styles.addtext}>
-            {name.indexOf('List') > -1 ? (<input id="tc_add_text_box" type="text" className={Styles.addtext__input} />) : (<textarea id="tc_add_text_area" className={Styles.addtext__input} ></textarea>) }
-            <button className={Styles.addtext__btn} onClick={this.handleAddNewItem}>{name}</button>
-            <button className={Styles.addtext__cancelbtn} onClick={() => this.toggleTextBox(false)}>Cancel</button>
+            {name.indexOf("List") > -1 ? (
+              <input
+                id="tc_add_text_box"
+                type="text"
+                className={Styles.addtext__input}
+              />
+            ) : (
+              <textarea
+                ref={this.addtext_box}
+                id="tc_add_text_area"
+                className={Styles.addtext__input}
+              />
+            )}
+            <button
+              className={Styles.addtext__btn}
+              onClick={this.handleAddNewItem}
+            >
+              {name}
+            </button>
+            <button
+              className={Styles.addtext__cancelbtn}
+              onClick={() => this.toggleTextBox(false)}
+            >
+              Cancel
+            </button>
           </div>
         ) : (
-          <div className={Styles.addbutton} onClick={() => this.toggleTextBox(true)}>
+          <div
+            className={Styles.addbutton}
+            onClick={() => this.toggleTextBox(true)}
+          >
             <a> + {name} </a>
           </div>
         )}

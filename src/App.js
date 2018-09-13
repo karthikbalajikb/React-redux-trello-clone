@@ -1,16 +1,23 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import { DragDropContext } from "react-dnd";
+import HTML5Backend from "react-dnd-html5-backend";
 
-import styles from './App.scss';
-import ListContainer from './container/List';
+import ListContainer from "./container/List";
+import QuickEditor from "./container/QuickEditor";
+
+import styles from "./App.scss";
 
 class App extends Component {
   render() {
     return (
-      <div className={styles.app}>
-        <ListContainer />
-      </div>
+      <main>
+        <div className={styles.app}>
+          <ListContainer />
+        </div>
+        <QuickEditor />
+      </main>
     );
   }
 }
 
-export default App;
+export default DragDropContext(HTML5Backend)(App);

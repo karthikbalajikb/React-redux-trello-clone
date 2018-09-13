@@ -10,13 +10,15 @@
   justify-content: space-between;
 
   &:hover {
-    background: linear-gradient(to bottom,#f4e8f79e, #fcfafd);
+    background: linear-gradient(to bottom, #f4e8f79e, #fcfafd);
   }
 
-  &__btn{
+  &__btn {
+    display: none;
     border: none;
     color: white;
     padding: 3px;
+    font-weight: bold;
     cursor: pointer;
     height: 20px;
     margin-top: 10px;
@@ -25,8 +27,8 @@
   &__title {
     font-size: 14px;
     color: #8c8c8c;
-    
-    &::after{
+
+    &::after {
       content: "edit";
       float: right;
       display: none;

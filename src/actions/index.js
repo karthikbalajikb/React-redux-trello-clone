@@ -16,11 +16,35 @@ const addNewCardAction = card => ({
   card
 });
 
-const deleteCardAction = (ids) => ({
+const deleteCardAction = ids => ({
   type: ActionTypes.DELETE_CARD_FROM_LIST,
   ids
-})
+});
 
+// const moveCardAction = (payload) => ({
+//   type: ActionTypes.MOVE_CARD_FROM_LIST,
+//   payload
+// })
+
+const getQuickEditorStateAction = () => ({
+  type: ActionTypes.GET_QUICK_EDITOR_STATE
+});
+
+const openQuickEditorAction = payload => ({
+  type: ActionTypes.TOGGLE_QUICK_EDITOR,
+  payload
+});
+
+const updateCardTitleAction = payload => ({
+  type: ActionTypes.UPDATE_CARD_TITLE,
+  payload
+});
+
+const closeQuickEditorAction = () => ({
+  type: ActionTypes.CLOSE_QUICK_EDITOR
+});
+
+// Action Creators
 export const fetchAllLists = () => dispatch => {
   const ListService = new ListAPI();
   ListService.fetchAllLists().then(lists => {
@@ -40,5 +64,46 @@ export const addNewCard = (id, title, desc) => dispatch => {
 
 export const deleteCard = (lid, cid) => dispatch => {
   const payload = { lid, cid };
-  dispatch(deleteCardAction(payload))
-}
+  dispatch(deleteCardAction(payload));
+  dispatch(closeQuickEditorAction());
+};
+
+export const moveCard = (
+  fromListID,
+  lid,
+  cid,
+  title,
+  description
+) => dispatch => {
+  // const payload = { fromListID, lid, cid, title, description };
+  // dispatch(moveCardAction(payload))
+  dispatch(deleteCardAction({ lid: fromListID, cid }));
+  dispatch(addNewCardAction({ id: lid, title, desc: description }));
+};
+
+export const getQuickEditorState = () => dispatch => {
+  dispatch(getQuickEditorStateAction());
+};
+
+export const openQuickEditor = (
+  listId,
+  cardId,
+  cardTitle,
+  top,
+  left
+) => dispatch => {
+  top = Math.ceil(top);
+  left = Math.ceil(left);
+  const payload = { listId, cardId, cardTitle, top, left };
+  dispatch(openQuickEditorAction(payload));
+};
+
+export const updateCardTitle = (listId, cardId, text) => dispatch => {
+  const payload = { listId, cardId, text };
+  dispatch(updateCardTitleAction(payload));
+  dispatch(closeQuickEditorAction());
+};
+
+export const closeQuickEditor = () => dispatch => {
+  dispatch(closeQuickEditorAction());
+};

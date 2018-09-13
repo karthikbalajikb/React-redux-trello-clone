@@ -28,9 +28,10 @@
     color: #afaeae;
     margin: 0 0 4px 0;
     border-radius: 4px;
+    font-family: sans-serif;
   }
 
-  &__btn{
+  &__btn {
     background-color: #5aac44;
     box-shadow: 0 1px 0 0 #3f6f21;
     border: none;
@@ -39,12 +40,12 @@
     padding: 5px;
     border-radius: 5px;
 
-    &:hover{
+    &:hover {
       background-color: #519839;
     }
   }
 
-  &__cancelbtn{
+  &__cancelbtn {
     background-color: #c1c1c1;
     box-shadow: 0 1px 0 0 #949393;
     border: none;
@@ -53,7 +54,7 @@
     padding: 5px;
     border-radius: 5px;
 
-    &:hover{
+    &:hover {
       background-color: #949393;
     }
   }

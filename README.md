@@ -15,3 +15,10 @@
 `cd mock` navigate to mock folder
 
 `json-server mockdata.json --port=3456` will run the api server in port 3456
+
+##### In Progress Items
+
+* Drag and drop
+* Edit card 
+* Full page modal screen for cards
+* Quick menu popup for edit and delete list
