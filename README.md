@@ -21,4 +21,8 @@
 * Drag and drop
 * Edit card 
 * Full page modal screen for cards
+<<<<<<< HEAD
 * Quick menu popup for edit and delete list
+=======
+* Quick menu popup for edit and delete list
+>>>>>>> ea028c19ca1eae03b039a3acafb6469153fd19f9
