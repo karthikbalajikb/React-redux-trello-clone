@@ -22,6 +22,13 @@ class AddButton extends Component {
         ? document.getElementById("tc_add_text_box").value
         : this.addtext_box.current.value;
     this.props.handleAddNewItem(text);
+    this.resetText()
+  };
+
+  resetText = () => {
+    this.props.name.indexOf("List") > -1
+      ? (document.getElementById("tc_add_text_box").value = "")
+      : (this.addtext_box.current.value = "");
   };
 
   render() {

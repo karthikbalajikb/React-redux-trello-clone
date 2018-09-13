@@ -14,7 +14,7 @@ Visit : http://react-redux-trello-clone.s3-website-us-east-1.amazonaws.com/
 
 `npm start` will start the application on port 3000.
 
-##### To Start the JSON Server
+### To Start the JSON Server
 
 `npm install -g json-server` install json-server globally
 
@@ -22,7 +22,7 @@ Visit : http://react-redux-trello-clone.s3-website-us-east-1.amazonaws.com/
 
 `json-server mockdata.json --port=3456` will run the api server in port 3456
 
-##### Current Features
+### Current Features
 1. Quick Edit
 
 ![image](https://user-images.githubusercontent.com/8594076/45518308-a7227780-b7ce-11e8-9d5b-7e11820efdff.png)
@@ -35,7 +35,8 @@ Visit : http://react-redux-trello-clone.s3-website-us-east-1.amazonaws.com/
 
 4. Add/Remove/Edit/Move Cards from lists
 
-##### In Progress Items
+### In Progress Items
 
 * Full page modal screen for cards
 * Quick menu popup for edit and delete list
+* Drag preview
