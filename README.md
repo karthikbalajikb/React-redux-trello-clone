@@ -1,6 +1,12 @@
 ## REACT REDUX TRELLO CLONE
 
-![image](https://user-images.githubusercontent.com/8594076/45387391-938ed980-b633-11e8-8561-462302fe1505.png)
+![image](https://user-images.githubusercontent.com/8594076/45518277-8fe38a00-b7ce-11e8-9abb-0816c2ae3ad9.png)
+
+### Deployment 
+
+Deployed in AWS S3 
+
+Visit : http://react-redux-trello-clone.s3-website-us-east-1.amazonaws.com/
 
 ### Develop
 
@@ -16,13 +22,20 @@
 
 `json-server mockdata.json --port=3456` will run the api server in port 3456
 
+##### Current Features
+1. Quick Edit
+
+![image](https://user-images.githubusercontent.com/8594076/45518308-a7227780-b7ce-11e8-9d5b-7e11820efdff.png)
+
+2. Drag and Drop
+
+![image](https://user-images.githubusercontent.com/8594076/45518397-f8326b80-b7ce-11e8-9b30-01cb40398253.png)
+
+3. Add New List
+
+4. Add/Remove/Edit/Move Cards from lists
+
 ##### In Progress Items
 
-* Drag and drop
-* Edit card 
 * Full page modal screen for cards
-<<<<<<< HEAD
 * Quick menu popup for edit and delete list
-=======
-* Quick menu popup for edit and delete list
->>>>>>> ea028c19ca1eae03b039a3acafb6469153fd19f9
