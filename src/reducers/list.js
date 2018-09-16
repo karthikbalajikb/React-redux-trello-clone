@@ -71,7 +71,7 @@ const List = (state = InitialState, action) => {
     }
 
     case MOVE_CARD_FROM_LIST: {
-      const { fromListID, lid, cid, title, description } = action.payload;
+      const { fromListID, lid, cid, title, description, dropIndex } = action.payload;
 
       const getList = state.List.findIndex(l => l.id === fromListID);
       const getCardIndex = state.List[getList].cards.findIndex(
@@ -90,12 +90,12 @@ const List = (state = InitialState, action) => {
       const filterList = state.List.find(l => l.id === lid);
 
       const updateList = Object.assign({}, filterList, {
-        cards: [...filterList.cards, newCardPayload]
+        cards: [...filterList.cards.slice(0, dropIndex), newCardPayload, ...filterList.cards.slice(dropIndex)]
       });
 
       state.List.splice(filterListIndex, 1, updateList);
       return {
-        ...state
+        ...state,
       };
     }
 

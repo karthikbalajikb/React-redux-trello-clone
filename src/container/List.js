@@ -30,11 +30,12 @@ class ListContainer extends Component {
                 left
               )
             }
-            handleMoveCard={(fromListID, listId, cardId, title, description) =>
+            handleMoveCard={(fromListID, listId, cardId, dropIndex, title, description) =>
               this.props.handleMoveCard(
                 fromListID,
                 listId,
                 cardId,
+                dropIndex,
                 title,
                 description
               )
@@ -77,8 +78,8 @@ const mapDispatchToProps = dispatch => ({
     dispatch(addNewCard(id, name, "demo card description")),
   handleToggleQuickEdit: (listId, cardId, cardTitle, top, left) =>
     dispatch(openQuickEditor(listId, cardId, cardTitle, top, left)),
-  handleMoveCard: (fromListID, listId, cardId, title, description) =>
-    dispatch(moveCard(fromListID, listId, cardId, title, description))
+  handleMoveCard: (fromListID, listId, cardId, dropIndex, title, description) =>
+    dispatch(moveCard(fromListID, listId, cardId, dropIndex, title, description))
 });
 
 export default connect(

@@ -6,12 +6,22 @@ import { DragTypes } from "../../constants/DragTypes";
 
 import CardTitle from "./CardTitle";
 // import CardDescription from "./CardDescription";
-
+// import CardWrapper from './CardWrapper';
 import Styles from "./Card.scss";
 
 const CardSource = {
   beginDrag(props) {
+    console.log("begin drag", props);
     return props;
+  },
+  endDrag(props, monitor) {
+   console.log("endDrag",props,monitor.getItem());
+  },
+  isDragging(props, monitor) {
+     const isDragging = props.id === monitor.getItem().id;
+    // console.log("isDrag", props,monitor.getItem());
+    // return isDragging;
+    return isDragging;
   }
 };
 
@@ -21,14 +31,6 @@ function collect(connect, monitor) {
     isDragging: monitor.isDragging()
   };
 }
-
-// const Card = (props) => (
-//   <section className={Styles.card}>
-//     <CardTitle title={props.title} />
-//     <button className={Styles.card__btn} onClick={props.handleDeleteCard}>X</button>
-//     {/* <CardDescription description={props.description} /> */}
-//   </section>
-// );
 
 class Card extends React.Component {
   constructor(props) {
@@ -58,9 +60,12 @@ class Card extends React.Component {
   };
 
   render() {
-    const { connectDragSource, isDragging } = this.props;
+    const { connectDragSource, isDragging, id, index } = this.props;
     return connectDragSource(
+     
       <section
+        id={id}
+        index={index}
         className={Styles.card}
         style={{
           opacity: isDragging ? 0.5 : 1
@@ -78,6 +83,7 @@ class Card extends React.Component {
         </button>
         {/* <CardDescription description={props.description} /> */}
       </section>
+     
     );
   }
 }
@@ -85,9 +91,11 @@ class Card extends React.Component {
 Card.propTypes = {
   listID: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
   handleToggleQuickEdit: PropTypes.func,
+  handleMoveCard: PropTypes.func,
   connectDragSource: PropTypes.func.isRequired,
   isDragging: PropTypes.bool.isRequired
 };

@@ -21,10 +21,10 @@ const deleteCardAction = ids => ({
   ids
 });
 
-// const moveCardAction = (payload) => ({
-//   type: ActionTypes.MOVE_CARD_FROM_LIST,
-//   payload
-// })
+const moveCardAction = (payload) => ({
+  type: ActionTypes.MOVE_CARD_FROM_LIST,
+  payload
+})
 
 const getQuickEditorStateAction = () => ({
   type: ActionTypes.GET_QUICK_EDITOR_STATE
@@ -72,13 +72,14 @@ export const moveCard = (
   fromListID,
   lid,
   cid,
+  dropIndex,
   title,
   description
 ) => dispatch => {
-  // const payload = { fromListID, lid, cid, title, description };
-  // dispatch(moveCardAction(payload))
-  dispatch(deleteCardAction({ lid: fromListID, cid }));
-  dispatch(addNewCardAction({ id: lid, title, desc: description }));
+  const payload = { fromListID, lid, cid, dropIndex, title, description };
+  dispatch(moveCardAction(payload))
+  // dispatch(deleteCardAction({ lid: fromListID, cid }));
+  // dispatch(addNewCardAction({ id: lid, title, desc: description }));
 };
 
 export const getQuickEditorState = () => dispatch => {
